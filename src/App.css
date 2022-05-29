@@ -1,38 +1,134 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+:root{
+    --main: hsl(185, 75%, 39%);
+    --title-color: hsl(229, 23%, 23%);
+    --p-color: hsl(227, 10%, 46%);
+    --line-color: hsla(0, 0%, 59%, 0.418);
+    --font-size: 1.1rem;
+    --font-family: 'Kumbh Sans', sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+body{
+background-color: var(--main);
+font-family: var(--font-family);
+}
+.App{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App::before{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    transform: rotate(181deg);
+    content: url("./images/bg-pattern-top.svg");
+    background-size: 100% 100%;
+    display: inline-block;
+}
+.App::after{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    content: url("./images/bg-pattern-bottom.svg");
+    background-size: 100% 100%;
+    display: inline-block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.big-container{
+    z-index: 1;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+header{
+    width: 100%;
+    height: 16vh;
+    background-image: url("./images/bg-pattern-card.svg");
+    display: flex;
+    justify-content: center;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    position: relative;
+    overflow: visible;
 }
-
-.App-link {
-  color: #61dafb;
+header::before{
+    content: '';
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    background-image: url("./images/image-victor.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 100%;
+    border: 5px solid white;
+    position: absolute;
+    margin-top: 10vh;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+main{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.profile-title{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25%;
+    border-bottom: 1px solid var(--line-color);
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: var(--font-size);
+    color: var(--title-color);
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+h1{
+    margin-bottom: 0;
+    font-size: var(--font-size);
+}
+em{
+    font-family: var(--font-family);
+    color: var(--p-color);
+    font-style:normal;
+    font-weight: 400;
+}
+.city{
+    font-family: var(--font-family);
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--p-color);
+    margin: 0;
+    padding-top: 3%;
+    padding-bottom: 7%;
+}
+.social-numbers{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.numbers{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+.numbers > p {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--title-color);
+}
+.numbers > em {
+    font-size: 0.8rem;
 }
